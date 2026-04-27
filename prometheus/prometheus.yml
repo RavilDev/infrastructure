@@ -1,0 +1,29 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']
+
+  - job_name: 'api-gateway'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['api-gateway:8080']
+        labels:
+          application: 'api-gateway'
+
+  - job_name: 'service-user'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['service-user:8081']
+        labels:
+          application: 'service-user'
+
+  - job_name: 'service-notification'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['service-notification:8082']
+        labels:
+          application: 'service-notification'

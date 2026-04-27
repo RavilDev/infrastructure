@@ -2,8 +2,8 @@
 
 Выполнить
 ```bash
-mkdir homework
-cd homework
+mkdir pet-project
+cd pet-project
 git clone https://github.com/RavilDev/service-discovery.git
 git clone https://github.com/RavilDev/external-configuration.git
 git clone https://github.com/RavilDev/api-gateway.git
